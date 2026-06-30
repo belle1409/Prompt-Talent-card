@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Annabelle Reed — Prompt Talent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #2D3361;
+      --navy-dark: #1e2244;
+      --cream: #F5F0E8;
+      --white: #ffffff;
+      --text: #1a1a2e;
+      --text-muted: #5a5a7a;
+      --accent: #4a5194;
+
+      --fs-label: 0.72rem;
+      --fs-body: 0.95rem;
+      --fs-heading: 1.1rem;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      font-size: var(--fs-body);
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #3d4a8a 100%);
+      color: var(--cream);
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(255,255,255,0.06) 0%, transparent 60%);
+    }
+
+    .logo-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--cream);
+    }
+
+    .logo-icon {
+      width: 28px;
+      height: 28px;
+      border: 2.5px solid var(--cream);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--fs-body);
+      font-weight: 700;
+      color: var(--cream);
+      flex-shrink: 0;
+      margin-top: -8px;
+    }
+
+    header h1 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.3rem;
+      color: var(--white);
+    }
+
+    header p.role {
+      font-size: var(--fs-label);
+      color: rgba(245, 240, 232, 0.75);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ── CONTACT BAR ── */
+    .contact-bar {
+      background: var(--white);
+      border-bottom: 3px solid var(--navy);
+      padding: 1.2rem 1.5rem;
+    }
+
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem 1.5rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: var(--fs-body);
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .contact-item:hover { color: var(--accent); }
+
+    .contact-item svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── MAIN CONTENT ── */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-label {
+      font-size: var(--fs-label);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--navy);
+      border-left: 3px solid var(--navy);
+      padding-left: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 1px 4px rgba(45, 51, 97, 0.08);
+    }
+
+    /* ── ABOUT ── */
+    .tagline {
+      font-size: var(--fs-heading);
+      font-weight: 600;
+      color: var(--navy);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    /* ── CAPABILITIES ── */
+    .capability-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 480px) {
+      .capability-grid { grid-template-columns: 1fr; }
+    }
+
+    .cap-item {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: var(--fs-body);
+      color: var(--navy);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 1px 4px rgba(45, 51, 97, 0.08);
+    }
+
+    .cap-item::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      background: var(--navy);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── PANELS ── */
+    .panel-badge {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--cream);
+      font-size: var(--fs-label);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+      margin: 0.3rem 0.3rem 0.3rem 0;
+    }
+
+    .panel-note {
+      font-size: var(--fs-body);
+      color: var(--text-muted);
+      margin-top: 0.75rem;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonial {
+      background: var(--white);
+      border-left: 3px solid var(--navy);
+      border-radius: 0 8px 8px 0;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 1rem;
+      font-size: var(--fs-body);
+      line-height: 1.7;
+      color: var(--text);
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--navy);
+      font-size: var(--fs-label);
+      margin-top: 0.5rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ── CASE STUDIES ── */
+    .case-study {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 1px 4px rgba(45, 51, 97, 0.08);
+    }
+
+    .case-study h3 {
+      font-size: var(--fs-heading);
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+
+    .case-row {
+      margin-bottom: 0.6rem;
+    }
+
+    .case-row-label {
+      font-size: var(--fs-label);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .case-row-body {
+      font-size: var(--fs-body);
+      line-height: 1.7;
+    }
+
+    /* ── CTA ── */
+    .cta-strip {
+      background: var(--navy);
+      color: var(--cream);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .cta-strip h2 {
+      font-size: var(--fs-heading);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--white);
+    }
+
+    .cta-strip p {
+      font-size: var(--fs-body);
+      color: rgba(245, 240, 232, 0.8);
+      margin-bottom: 1rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: 6px;
+      font-size: var(--fs-body);
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .btn:hover { opacity: 0.85; }
+
+    .btn-light {
+      background: var(--cream);
+      color: var(--navy);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--cream);
+      border: 2px solid rgba(245, 240, 232, 0.6);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: var(--fs-label);
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">
+    <span class="logo-text">PROMPT</span>
+    <span class="logo-icon">P</span>
+  </div>
+  <h1>Annabelle Reed</h1>
+  <p class="role">Founder &amp; Recruitment Specialist</p>
+</header>
+
+<div class="contact-bar">
+  <div class="contact-grid">
+    <a class="contact-item" href="tel:0434042082">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.09 6.09l1-1a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      0434 042 082
+    </a>
+    <a class="contact-item" href="mailto:annabelle@prompttalent.au">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      annabelle@prompttalent.au
+    </a>
+    <a class="contact-item" href="https://www.prompttalent.au" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      prompttalent.au
+    </a>
+    <a class="contact-item" href="https://www.linkedin.com/in/annabellereed/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+  </div>
+</div>
+
+<main>
+
+  <!-- ABOUT -->
+  <section>
+    <div class="section-label">About</div>
+    <div class="card">
+      <p class="tagline">"Responsive talent, disciplined delivery."</p>
+      <p class="about-text">
+        After years in the recruitment industry, I realised something fundamental: recruiting is where I thrive.
+        So I started Prompt Talent to get back to what I love — focusing on the work that energises me most:
+        recruiting in the technology and security space, bringing my passion and expertise to the roles and
+        technologies that genuinely excite me.
+      </p>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES -->
+  <section>
+    <div class="section-label">Specialisations</div>
+    <div class="capability-grid">
+      <div class="cap-item">IT &amp; Technology</div>
+      <div class="cap-item">Defence &amp; National Security</div>
+      <div class="cap-item">AI &amp; Emerging Tech</div>
+      <div class="cap-item">Government Contracting</div>
+      <div class="cap-item">Executive Search</div>
+      <div class="cap-item">ICT Workforce Solutions</div>
+    </div>
+  </section>
+
+  <!-- PANELS -->
+  <section>
+    <div class="section-label">Panel Access</div>
+    <div class="card">
+      <div>
+        <span class="panel-badge">DMP2 (BuyICT)</span>
+        <span class="panel-badge">ICTPA</span>
+      </div>
+      <p class="panel-note">Access to additional panels coming soon. Contact me for further details.</p>
+    </div>
+  </section>
+
+  <!-- WHY I STAND OUT -->
+  <section>
+    <div class="section-label">My Approach</div>
+    <div class="card">
+      <p class="standout-text">
+        What sets me apart is that I genuinely care about getting recruitment right. My job satisfaction
+        comes from knowing the people I place are happy, fulfilled, and moving forward in roles that give
+        them stability, growth, challenge, and the chance to contribute meaningfully. I do not just fill
+        seats or chase numbers. I take the time to listen properly, understand what people need, and follow
+        through with reliability. If I say I will call on Friday, I will call on Friday — even if there is
+        nothing new to report.
+      </p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <div class="section-label">What Clients Say</div>
+
+    <div class="testimonial">
+      Annabelle is a responsive, insightful recruitment partner with deep experience across ICT, Defence,
+      and consulting. Her solutions-focused approach, commitment to feedback, and hands-on understanding of
+      emerging AI tools give her a clear edge in an evolving tech landscape. I would gladly work with
+      Annabelle again and highly recommend her to any organisation seeking a reliable, forward-thinking
+      recruitment specialist.
+      <div class="testimonial-author">— Client</div>
+    </div>
+
+    <div class="testimonial">
+      Annabelle stands out as a true strategic recruitment partner, combining extensive networks across
+      Defence, Public, and Commercial sectors with a forward-thinking understanding of emerging technologies,
+      particularly AI. She delivers solutions, not just candidates, and brings a rare balance of genuine
+      relationship-building and practical technical insight.
+      <div class="testimonial-author">— Client</div>
+    </div>
+
+    <div class="testimonial">
+      Annabelle made the recruitment process clear, thorough, and easy from start to finish. She took the
+      time to deeply understand our business and the type of person we needed, then screened and presented
+      a strong shortlist of candidates who could all do the job. Recruiting people is hard, but Annabelle
+      made our lives so much easier.
+      <div class="testimonial-author">— Client</div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section>
+    <div class="section-label">Case Studies</div>
+
+    <div class="case-study">
+      <h3>Federal Government — ICT Contractor Resources</h3>
+      <div class="case-row">
+        <div class="case-row-label">Capability Delivered</div>
+        <div class="case-row-body">Curated pipeline of experienced ICT professionals with government delivery experience across digital transformation, architecture, engineering, cyber security, and application development.</div>
+      </div>
+      <div class="case-row">
+        <div class="case-row-label">Outcome</div>
+        <div class="case-row-body">Rapid candidate identification aligned to SFIA-based capability frameworks. Enabled agencies to align workforce capacity directly to strategic and operational outcomes.</div>
+      </div>
+    </div>
+
+    <div class="case-study">
+      <h3>Executive Search — Private Industry (General Manager)</h3>
+      <div class="case-row">
+        <div class="case-row-label">Challenge</div>
+        <div class="case-row-body">Key hire for a large Australian systems integrator — required both technical capability and culture fit. Complex non-compete landscape in a small Canberra market.</div>
+      </div>
+      <div class="case-row">
+        <div class="case-row-label">Outcome</div>
+        <div class="case-row-body">Candidate has been in place since 2022 and the business has grown significantly under their stewardship, with minimal disruption and markedly improved culture.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-strip">
+    <h2>Let's work together</h2>
+    <p>Whether you're building a team or looking for your next opportunity, I'd love to connect.</p>
+    <div class="cta-buttons">
+      <a class="btn btn-light" href="mailto:annabelle@prompttalent.au">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email Annabelle
+      </a>
+      <a class="btn btn-outline" href="https://www.prompttalent.au" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Visit Website
+      </a>
+      <a class="btn btn-outline" href="https://www.linkedin.com/in/annabellereed/" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        Connect on LinkedIn
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  &copy; 2025 Prompt Talent &nbsp;·&nbsp; Responsive talent, disciplined delivery.
+</footer>
+
+</body>
+</html>
