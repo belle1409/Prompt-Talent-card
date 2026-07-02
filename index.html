@@ -336,6 +336,23 @@
       border: 2px solid rgba(245, 240, 232, 0.6);
     }
 
+    /* ── ADD TO CONTACTS ── */
+    .btn-add-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--navy);
+      color: var(--cream);
+      font-size: var(--fs-body);
+      font-weight: 600;
+      padding: 0.75rem 1.75rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .btn-add-contact:hover { opacity: 0.85; }
+
     /* ── FOOTER ── */
     footer {
       text-align: center;
@@ -494,6 +511,13 @@
   </section>
 
   <!-- CTA -->
+  <div style="text-align: center; margin-bottom: 1.5rem;">
+    <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3AAnnabelle%20Reed%0AORG%3APrompt%20Talent%0ATEL%3BTYPE%3DCELL%3A0434042082%0AEMAIL%3Aannabelle%40prompttalent.au%0AURL%3Ahttps%3A%2F%2Fwww.prompttalent.au%0AURL%3Bhttps%3A%2F%2Fwww.linkedin.com%2Fin%2Fannabellereed%2F%0AEND%3AVCARD" download="Annabelle-Reed.vcf" class="btn-add-contact">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+      Add to Contacts
+    </a>
+  </div>
+
   <div class="cta-strip">
     <h2>Let's work together</h2>
     <p>Whether you're building a team or looking for your next opportunity, I'd love to connect.</p>
